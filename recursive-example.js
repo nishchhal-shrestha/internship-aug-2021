@@ -7,7 +7,7 @@ const flatten = (input = [], result = []) => {
         if(typeof item == 'object') {
             flatten(item, result);
         } else {            
-            result.push(item)
+            result.push(item);
         }
     }
 }
