@@ -1,6 +1,6 @@
 // import store
 
-const addTodoItem = (name) => {
+export const addTodoItem = (name) => {
     console.log('Added Todo Item', name);
     return {
         id: 1,
@@ -11,11 +11,11 @@ const addTodoItem = (name) => {
     }
 }
 
-const removeTodoItem = (todoItem) => {
+export const removeTodoItem = (todoItem) => {
     console.log('Removed Todo Item', todoItem);
 }
 
-const markTodoItemAsDone = (todoItem) => {
+export const markTodoItemAsDone = (todoItem) => {
     console.log('Marked Todo Item as done', todoItem);
     return {
         id: todoItem.id,
@@ -26,13 +26,7 @@ const markTodoItemAsDone = (todoItem) => {
     }
 }
 
-const setDueDateToTodoItem = (todoItem) => {
+export const setDueDateToTodoItem = (todoItem) => {
     console.log('Set Due date to Todo Item', todoItem);
 }
 
-module.exports = {
-    addTodoItem,
-    removeTodoItem,
-    markTodoItemAsDone,
-    setDueDateToTodoItem
-}

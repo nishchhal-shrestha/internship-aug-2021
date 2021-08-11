@@ -1,3 +1,1 @@
-const { addTodoItem } = require('./todo')
-
-console.log(addTodoItem('Item 1'))
+import { addTodoItem } from './modules/todo.js'
