@@ -21,8 +21,15 @@
             <input type="submit" value="Submit Input" />
         </form>
         <div id="app">
-            
+            <input type="date" id="due-date" />
+            <button id="printDate">Print Date</button>
         </div>
+        <form id="todo-form">
+            <input type="text" name="newTodoName" />
+            <input type="date" name="newTodoDueDate" />
+            <input type="submit" value="Add Todo" />
+        </form>
+        <button id="get-todo-items">Get Todo Items</button>
         <script type="module" src='./index.js'>
         </script>     
         <script src="./homepage.js"></script>  

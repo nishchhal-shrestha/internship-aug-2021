@@ -20,3 +20,20 @@ document.getElementsByTagName('a')[0].addEventListener('click', (event) => {
     event.preventDefault();
     console.log('anchor clicked');
 })
+
+document.getElementById('printDate').addEventListener('click', (event) => {
+    event.preventDefault();
+    console.log(document.getElementById('due-date').value)
+})
+
+document.getElementById('due-date').addEventListener('blur', (event) => {
+    console.log('Blur Triggered', event.target.value)
+    
+    if(event.target.value && new Date(event.target.value) < new Date()) {
+        event.target.value = '';
+    }
+})
+
+document.getElementById('due-date').addEventListener('input', (event) => {
+    console.log('input triggered', event.target.value)
+})

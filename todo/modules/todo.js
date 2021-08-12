@@ -1,14 +1,28 @@
-// import store
+import { addItem, getItems } from './store.js'
 
 export const addTodoItem = (name) => {
     console.log('Added Todo Item', name);
-    return {
+    if(!name) {
+        throw new Error('Name is required')
+    }
+
+    const todoItems = getItems();
+
+    for(let item of todoItems) {
+        if(item.name.toLowerCase() === name.toLowerCase()) {
+            throw new Error('Item already exists')
+        }
+    }
+
+    let newTodoItem = {
         id: 1,
         name: name,
         dueDate: null,
         isComplete: false,
         completedDate: null
     }
+    addItem(newTodoItem);
+    return newTodoItem;
 }
 
 export const removeTodoItem = (todoItem) => {
@@ -28,5 +42,9 @@ export const markTodoItemAsDone = (todoItem) => {
 
 export const setDueDateToTodoItem = (todoItem) => {
     console.log('Set Due date to Todo Item', todoItem);
+}
+
+export const getTodoItems = () => {
+    return getItems();
 }
 
