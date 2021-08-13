@@ -18,3 +18,12 @@ document.getElementById('remove-todo-item').addEventListener('click', (event) =>
     console.log('todoItems', document.getElementsByName('newTodoName')[0].value);
     removeTodoItem(document.getElementsByName('newTodoName')[0].value);
 })
+
+document.querySelectorAll('#todo-item-list button.remove-item').forEach((item) => {
+    item.addEventListener('click', (event) => {
+        event.preventDefault();
+        console.log('Remove Clicked', event);
+        console.log(event.target.parentNode);
+        event.target.parentNode.parentNode.removeChild(event.target.parentNode);
+    });
+});
