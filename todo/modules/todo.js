@@ -45,7 +45,7 @@ export const setDueDateToTodoItem = (todoItem) => {
     console.log('Set Due date to Todo Item', todoItem);
 }
 
-export const getTodoItems = () => {
+export const getTodoItems = async () => {
     return getItems();
 }
 

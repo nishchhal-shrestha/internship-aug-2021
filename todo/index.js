@@ -8,9 +8,9 @@ document.getElementById('todo-form').addEventListener('submit', (event) => {
     addTodoItem(data.get('newTodoName'))
 })
 
-document.getElementById('get-todo-items').addEventListener('click', (event) => {
+document.getElementById('get-todo-items').addEventListener('click', async (event) => {
     event.preventDefault();
-    console.log('todoItems', getTodoItems());
+    console.log('todoItems', await getTodoItems());
 })
 
 document.getElementById('remove-todo-item').addEventListener('click', (event) => {
