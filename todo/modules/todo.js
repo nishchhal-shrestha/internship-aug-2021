@@ -1,4 +1,4 @@
-import { addItem, getItems } from './store.js'
+import { addItem, getItems, removeItemByName } from './store.js'
 
 export const addTodoItem = (name) => {
     console.log('Added Todo Item', name);
@@ -15,7 +15,7 @@ export const addTodoItem = (name) => {
     }
 
     let newTodoItem = {
-        id: 1,
+        id: Math.random(),
         name: name,
         dueDate: null,
         isComplete: false,
@@ -25,8 +25,9 @@ export const addTodoItem = (name) => {
     return newTodoItem;
 }
 
-export const removeTodoItem = (todoItem) => {
-    console.log('Removed Todo Item', todoItem);
+export const removeTodoItem = (name) => {
+    console.log('Removed Todo Item', name);
+    removeItemByName(name);
 }
 
 export const markTodoItemAsDone = (todoItem) => {

@@ -1,4 +1,4 @@
-import { addTodoItem, getTodoItems } from './modules/todo.js'
+import { addTodoItem, getTodoItems, removeTodoItem } from './modules/todo.js'
 
 document.getElementById('todo-form').addEventListener('submit', (event) => {
     event.preventDefault();
@@ -11,4 +11,10 @@ document.getElementById('todo-form').addEventListener('submit', (event) => {
 document.getElementById('get-todo-items').addEventListener('click', (event) => {
     event.preventDefault();
     console.log('todoItems', getTodoItems());
+})
+
+document.getElementById('remove-todo-item').addEventListener('click', (event) => {
+    event.preventDefault();
+    console.log('todoItems', document.getElementsByName('newTodoName')[0].value);
+    removeTodoItem(document.getElementsByName('newTodoName')[0].value);
 })
