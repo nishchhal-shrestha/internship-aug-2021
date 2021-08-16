@@ -10,7 +10,7 @@ export const addItem = (item) => {
     window.localStorage.setItem('todos', JSON.stringify(todoItems));
 }
 
-export const getItems = async () => {
+export const getItems = () => {
     let todoItems = window.localStorage.getItem('todos');
     if(todoItems) {
         todoItems = JSON.parse(todoItems);
