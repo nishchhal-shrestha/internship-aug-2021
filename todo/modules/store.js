@@ -52,3 +52,23 @@ export const removeItemByName = (name) => {
     window.localStorage.setItem('todos', JSON.stringify(todoItems));
 }
 
+export const updateCompletedStatusByName = (name, status) => {
+    let todoItems = window.localStorage.getItem('todos');
+
+    if(todoItems) {
+        todoItems = JSON.parse(todoItems);
+    } else {
+        todoItems = [];
+    }
+    
+    let todoItemsByNameIndex = todoItems.findIndex((item) => {
+        return item.name.toLowerCase() == name.toLowerCase();
+    })
+    console.log('Item index', todoItemsByNameIndex);
+    if(todoItemsByNameIndex > -1) {
+        todoItems[todoItemsByNameIndex].isComplete = status;
+    }
+
+    window.localStorage.setItem('todos', JSON.stringify(todoItems));
+}
+
