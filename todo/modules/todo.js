@@ -1,12 +1,12 @@
 import { addItem, getItems, removeItemByName } from './store.js'
 
-export const addTodoItem = (name) => {
+export const addTodoItem = async (name) => {
     console.log('Added Todo Item', name);
     if(!name) {
         throw new Error('Name is required')
     }
 
-    const todoItems = getItems();
+    const todoItems = await getItems();
 
     for(let item of todoItems) {
         if(item.name.toLowerCase() === name.toLowerCase()) {
@@ -21,7 +21,8 @@ export const addTodoItem = (name) => {
         isComplete: false,
         completedDate: null
     }
-    addItem(newTodoItem);
+    let result = await addItem(newTodoItem);
+    console.log(result);
     return newTodoItem;
 }
 
@@ -45,7 +46,7 @@ export const setDueDateToTodoItem = (todoItem) => {
     console.log('Set Due date to Todo Item', todoItem);
 }
 
-export const getTodoItems = () => {
-    return getItems();
+export const getTodoItems = async () => {
+    return await getItems();
 }
 

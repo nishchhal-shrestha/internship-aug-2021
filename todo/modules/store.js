@@ -1,23 +1,29 @@
 export const addItem = (item) => {
-    let todoItems = window.localStorage.getItem('todos');
-    if(todoItems) {
-        todoItems = JSON.parse(todoItems);
-    } else {
-        todoItems = [];
-    }
-    todoItems.push(item);
+    return new Promise((resolve, reject) => {
+        let todoItems = window.localStorage.getItem('todos');
+        if(todoItems) {
+            todoItems = JSON.parse(todoItems);
+        } else {
+            todoItems = [];
+        }
+        todoItems.push(item);
 
-    window.localStorage.setItem('todos', JSON.stringify(todoItems));
+        window.localStorage.setItem('todos', JSON.stringify(todoItems));
+        resolve(true);
+    });
 }
 
-export const getItems = () => {
-    let todoItems = window.localStorage.getItem('todos');
-    if(todoItems) {
-        todoItems = JSON.parse(todoItems);
-    } else {
-        todoItems = [];
-    }
-    return todoItems;
+export const getItems = async () => {
+    let response = await fetch('https://demo3410238.mockable.io/todoitems')
+            .then(response => response.json())
+    // let todoItems = window.localStorage.getItem('todos');
+    // if(todoItems) {
+    //     todoItems = JSON.parse(todoItems);
+    // } else {
+    //     todoItems = [];
+    // }
+    console.log(response);
+    return response.items;
 }
 
 export const getMovies = async () => {
