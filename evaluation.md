@@ -19,7 +19,7 @@ Implement the CRUD operation using the mentioned REST API and given UI
 
 Google and study Promises tutorials and [Promise.all function](https://dmitripavlutin.com/promise-all/).
 
-Attempt [Promise Challenge](https://www.codingame.com/playgrounds/347/javascript-promises-mastering-the-asynchronous/the-last-challenge) in the editor provided in the link. The solution is in the link itself but attempt the solution by yourself. Copy your solution in a txt file and push to your git repository. You will be asked to explain your solution of refrain from copy pasting.
+Attempt [Promise Challenge](https://www.codingame.com/playgrounds/347/javascript-promises-mastering-the-asynchronous/the-last-challenge) in the editor provided in the link. The solution is in the link itself but attempt the solution by yourself. Copy your solution in a txt file and push to your git repository. You will be asked to explain your solution so refrain from copy pasting.
 
 
 
