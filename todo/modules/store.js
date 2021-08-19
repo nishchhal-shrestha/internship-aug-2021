@@ -1,15 +1,19 @@
 export const addItem = (item) => {
     return new Promise((resolve, reject) => {
-        let todoItems = window.localStorage.getItem('todos');
-        if(todoItems) {
-            todoItems = JSON.parse(todoItems);
-        } else {
-            todoItems = [];
-        }
-        todoItems.push(item);
+        try {        
+            let todoItems = window.localStorage.getItem('todos');
+            if(todoItems) {
+                todoItems = JSON.parse(todoItems);
+            } else {
+                todoItems = [];
+            }
+            todoItems.push(item);
 
-        window.localStorage.setItem('todos', JSON.stringify(todoItems));
-        resolve(true);
+            window.localStorage.setItem('todos', JSON.stringify(todoItems));
+            resolve(true);
+        } catch(e) {
+            reject(e);
+        }
     });
 }
 
